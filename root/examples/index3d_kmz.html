@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+      html, body{
+        height: 600px;
+        width: 800px;
+        overflow: hidden;
+      }
+   	</style>
+
+    <link rel="stylesheet" href="../ol3/css/ol.css" type="text/css">
+    <script src="../ol3/ol-debug.js"></script>
+    <script src="../ol3/ol.js"></script>
+    <script src="../Cesium/Cesium.js"></script>
+    <script src="../ol3cesium.js"></script>
+
+    <title>3D Viewer</title>
+  </head>
+  <body>
+  <div id="cesiumContainer" class="fullSize"></div>
+  <script type="text/javascript">    
+    var viewer = new Cesium.Viewer('cesiumContainer');
+	/*var kmlDataSource = new Cesium.KmlDataSource();
+    kmlDataSource.loadUrl('data/SampleData/models/Hoover/HooverDamtunnelsdetailedConvert.kmz');
+    viewer.dataSources.add(kmlDataSource);*/
+	
+	
+/*
+var scene = viewer.scene;
+var modelMatrix = Cesium.Transforms.eastNorthUpToFixedFrame(
+    Cesium.Cartesian3.fromDegrees(-75.62898254394531, 40.02804946899414, 0.0));
+var model = scene.primitives.add(Cesium.Model.fromGltf({
+    url : 'data/SampleData/models//CesiumAir/Cesium_Air.gltf',
+    modelMatrix : modelMatrix,
+    scale : 200.0
+}));*/
+	var kmlDataSource = new Cesium.KmlDataSource();
+    /*kmlDataSource.loadUrl('data/SampleData/models/Hoover/HooverDamtunnelsdetailed.kmz');*/
+	/*KMZ on the server path */
+	kmlDataSource.loadUrl('http://localhost:8081/examples/data/SampleData/models/Hoover/HooverDamtunnelsdetailed.kmz');
+	scene.dataSources.add(kmlDataSource);
+
+
+  </script>
+ 
+  </body>
+</html>
+

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+      html, body{
+        height: 600px;
+        width: 800px;
+        overflow: hidden;
+      }
+     #map{position: absolute; left: 0; top: 0; bottom: 0; right: 0;}
+	 #controls{position: absolute; padding: 10px; z-index: 50;  opacity: 0.9; background-color: #fff;right: 10px; top: 160px; padding: 10px; text-align: right; background-color: transparent;}
+     #infoDiv{position: absolute; padding: 10px; z-index: 50; opacity: 0.9; background-color: #fff;}
+     #infoDiv{right: 10px; bottom: 10px; padding-bottom: 0;}
+	 fieldset {display:inline-block;float:left;}
+     label {display:block;}
+     
+	 fieldset{border: 0;}
+	</style>
+
+     <link rel="stylesheet" href="../ol3/css/ol.css" type="text/css">
+    <script src="../ol3/ol-debug.js"></script>
+    <script src="../ol3/ol.js"></script>
+    <script src="../Cesium/Cesium.js"></script>
+    <script src="../ol3cesium.js"></script>
+
+    <title>3D Viewer</title>
+  </head>
+  <body>
+    <h1>My Map</h1>
+    <div id="map"></div>
+	
+	<div id="controls">
+    <input type="button" value="Switch 2D/3D" onclick="javascript:ol3d.setEnabled(!ol3d.getEnabled())" /><br><br>
+	<input type="button" value="Zoom World" onclick="zoom2World();" /><br><br>
+	<input type="button" value="Zoom Yunnan" onclick="zoom2Yunnan();" /><br><br>
+	</div>
+	
+	
+	<div id="infoDiv">
+      <fieldset id="layer0">
+        <label class="checkbox" for="visible0">
+          <input id="visible0" class="visible" type="checkbox" onchange="layer0.setVisible(this.checked)" checked/>Bing Maps
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer0.setOpacity(this.value)"/>
+     </fieldset>
+      <fieldset id="layer1">
+        <label class="checkbox" for="visible10">
+          <input id="visible1" class="visible" type="checkbox" onchange="layer1.setVisible(this.checked)" checked/>Open Street Map
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer1.setOpacity(this.value)"/>
+      </fieldset>
+      <fieldset id="layer2">
+        <label class="checkbox" for="visible10">
+          <input id="visible1" class="visible" type="checkbox" onchange="layer2.setVisible(this.checked)" />World Earthquake
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer2.setOpacity(this.value)"/>
+      </fieldset>
+    </div>
+
+    <script type="text/javascript" src="index3d_hoover_3d.js"> </script>     
+
+	
+  </body>
+</html>
+

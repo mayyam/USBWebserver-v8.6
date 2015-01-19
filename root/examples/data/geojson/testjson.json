@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "School": "Dukes",
+            "wins": 3
+        },
+        {
+            "School": "Emmaus",
+            "wins": 10
+        },
+        {
+            "School": "Maryland",
+            "wins": 5
+        },
+        {
+            "School": "Virginia",
+            "wins": 2
+        }
+    ]
+}

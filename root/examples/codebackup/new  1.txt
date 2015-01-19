@@ -1,0 +1,39 @@
+	 fieldset {display:inline-block;float:left;}
+	 fieldset{border: 0;}
+	 
+	 	<div id="controls">
+    <input type="button" value="Switch 2D/3D" onclick="javascript:ol3d.setEnabled(!ol3d.getEnabled())" /><br><br>
+	<input type="button" value="Zoom World" onclick="zoom2World();" /><br><br>
+	<input type="button" value="Zoom Yunnan" onclick="zoom2Yunnan();" /><br><br>
+	</div>
+	
+	
+	<div id="infoDiv">
+      <fieldset id="layer0">
+        <label class="checkbox" for="visible0">
+          <input id="visible0" class="visible" type="checkbox" onchange="layer0.setVisible(this.checked)" checked/>Bing Maps
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer0.setOpacity(this.value)"/>
+     </fieldset>
+      <fieldset id="layer1">
+        <label class="checkbox" for="visible10">
+          <input id="visible1" class="visible" type="checkbox" onchange="layer1.setVisible(this.checked)" checked/>Open Street Map
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer1.setOpacity(this.value)"/>
+      </fieldset>
+      <fieldset id="layer2">
+        <label class="checkbox" for="visible10">
+          <input id="visible1" class="visible" type="checkbox" onchange="layer2.setVisible(this.checked)" />World Earthquake
+        </label>
+        <input class="opacity" type="range" min="0" max="1" step="0.01" value="1" oninput="layer2.setOpacity(this.value)"/>
+      </fieldset>
+    </div>
+	
+	listeners: {
+								itemclick:function(node, event){
+										console.log('node');
+										console.log(node);
+									}
+								}
+								 
+								 
